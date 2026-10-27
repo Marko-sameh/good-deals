@@ -1,0 +1,121 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Good Deals — Your business, switched on.</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070F1E;--s:#212B4C;--n:#E2E8F0;--a:#BFF747;--m:#9AA6BF}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--n);font-family:'Plus Jakarta Sans',Cairo,sans-serif;overflow-x:hidden}
+[dir=rtl] body,[dir=rtl] h1,[dir=rtl] h2,[dir=rtl] h3{font-family:Cairo,sans-serif}
+h1,h2,h3{font-family:Cairo,sans-serif}a{color:inherit;text-decoration:none;cursor:pointer}
+.w{max-width:1200px;margin:auto;padding:0 24px}
+#ld{position:fixed;inset:0;background:var(--bg);z-index:99;display:grid;place-items:center;transition:transform .9s cubic-bezier(.7,0,.2,1)}
+#ld b{font:900 72px Cairo;color:var(--a)}#ld.go{transform:translateY(-100%)}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:18px 0;backdrop-filter:blur(10px);background:#070F1Ecc}
+nav .w{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.lg{font:900 26px Cairo}.lg span{color:var(--a)}nav ul{display:flex;gap:24px;list-style:none;font-size:14px;color:var(--m)}
+nav ul a.on,nav ul a:hover{color:var(--a)}.r{display:flex;gap:10px;align-items:center}
+.lb{border:1px solid var(--s);background:none;color:var(--n);border-radius:99px;padding:8px 14px;font-weight:700;cursor:pointer}
+.btn{background:var(--a);color:var(--bg);padding:12px 22px;border-radius:99px;font-weight:800;display:inline-block;border:0;cursor:pointer;font-family:inherit}
+.hero{position:relative;height:100vh;display:flex;align-items:flex-end;padding-bottom:12vh;overflow:hidden}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45}
+.hero:after{content:'';position:absolute;inset:0;background:linear-gradient(transparent,var(--bg))}
+.hero .w{position:relative;z-index:2;width:100%}.tag{color:var(--a);font-size:12px;letter-spacing:.3em;margin-bottom:20px;font-weight:700}
+h1{font-size:clamp(44px,8vw,120px);line-height:1.02;font-weight:900}h1 em,h2 em{color:var(--a);font-style:normal}
+.wd{display:inline-block;opacity:0;transform:translateY(60px);transition:.8s cubic-bezier(.2,.8,.2,1);margin-inline-end:.25em}.wd.in{opacity:1;transform:none}
+.sub{max-width:560px;margin:28px 0;color:var(--m);font-size:18px}
+.ph{padding:180px 0 80px;background:radial-gradient(circle at 85% 0,#BFF74722,transparent 40%)}
+.mq{border-block:1px solid var(--s);padding:24px 0;overflow:hidden;background:#0b1528;direction:ltr}
+.mq div{display:flex;gap:60px;width:max-content;animation:m 25s linear infinite;font:900 48px Cairo;color:#E2E8F044}.mq i{color:var(--a);font-style:normal}
+@keyframes m{to{transform:translateX(-50%)}}
+section{padding:100px 0}h2{font-size:clamp(34px,5vw,68px);font-weight:900;margin-bottom:50px;line-height:1.1}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;color:var(--m)}.stats b{font:900 64px Cairo;color:var(--a);display:block}
+.g{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.g4{grid-template-columns:repeat(4,1fr)}.g2{grid-template-columns:repeat(2,1fr)}
+.c{background:var(--s);border-radius:20px;padding:36px;transition:.4s;display:block}.c:hover{background:var(--a);color:var(--bg);transform:translateY(-6px)}
+.c small{opacity:.6}.c h3{font-size:24px;margin:14px 0 8px}.c p{opacity:.8}
+.row{display:grid;grid-template-columns:100px 1fr 1fr;gap:24px;align-items:center;border-top:1px solid var(--s);padding:40px 0;transition:.4s}
+.row b{font:900 48px Cairo;color:#BFF74766}.row h3{font-size:clamp(26px,3.5vw,44px);transition:.4s}.row:hover h3{color:var(--a);transform:translateX(12px)}[dir=rtl] .row:hover h3{transform:translateX(-12px)}.row p{color:var(--m)}
+.hz{height:300vh;position:relative}.hz .st{position:sticky;top:0;height:100vh;display:flex;align-items:center;overflow:hidden;direction:ltr}
+.tr{display:flex;gap:30px;padding-left:24px}
+.pj{flex:0 0 60vw;height:60vh;border-radius:24px;background:linear-gradient(135deg,var(--s),#0b1528);padding:40px;display:flex;flex-direction:column;justify-content:flex-end;border:1px solid #ffffff14}
+.pj h3{font-size:44px}.pj span{color:var(--a)}
+.wk{height:340px;border-radius:24px;background:linear-gradient(135deg,var(--s),#0b1528);padding:32px;display:flex;flex-direction:column;justify-content:flex-end;border:1px solid #ffffff14;transition:.4s}.wk:hover{border-color:var(--a)}.wk span{color:var(--a);font-size:13px}.wk h3{font-size:30px}
+.rv{opacity:0;transform:translateY(40px);transition:1s}.rv.in{opacity:1;transform:none}
+.q{font:700 clamp(22px,3vw,36px) Cairo;line-height:1.4}.q small{display:block;color:var(--a);font:600 14px 'Plus Jakarta Sans';margin-top:16px}
+.cta{text-align:center}form{max-width:560px;margin:auto;display:grid;gap:14px}
+input,textarea{background:var(--s);border:0;border-radius:14px;padding:16px;color:var(--n);font:inherit}
+.art{max-width:760px;margin:auto;font-size:19px;line-height:1.8;color:#cfd6e3}.art p{margin-bottom:24px}
+.pl{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--s);border-radius:20px;overflow:hidden}.pl div{background:var(--bg);padding:50px 20px;text-align:center;font:800 22px Cairo;color:var(--m);transition:.3s}.pl div:hover{color:var(--a);background:#0b1528}
+footer{padding:50px 0;border-top:1px solid var(--s);font-size:14px;color:var(--m)}footer .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px}
+#cur{position:fixed;width:16px;height:16px;border-radius:50%;background:var(--a);pointer-events:none;z-index:98;mix-blend-mode:difference;transform:translate(-50%,-50%)}
+#mb{display:none;background:none;border:0;color:var(--n);font-size:26px}
+@media(max-width:900px){nav ul{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);flex-direction:column;padding:24px;font-size:20px}nav ul.op{display:flex}#mb{display:block}.g,.g4,.stats,.pl{grid-template-columns:1fr 1fr}.g2,.row{grid-template-columns:1fr}.pj{flex-basis:80vw}#cur{display:none}.hide{display:none}}
+</style></head><body>
+<div id="ld"><b>GD</b></div><div id="cur"></div>
+<nav><div class="w"><a class="lg" href="#/">Good<span>Deals</span></a><ul id="nl"></ul><div class="r"><button class="lb" id="lb"></button><a class="btn hide" href="#/contact" id="nc"></a><button id="mb">☰</button></div></div></nav>
+<main id="app"></main>
+<footer><div class="w"><div><div class="lg">Good<span>Deals</span></div><p id="ft" style="margin-top:10px"></p></div><div>Abu Dhabi, UAE • Cairo, Egypt<br><span dir="ltr">+971 50 317 2004</span> · info@gooddeals.ae</div></div></footer>
+<script>
+const VIDEO="https://id-preview--df00abd6-a474-4305-a542-106958f38bad.lovable.app/__l5e/assets-v1/3804a47a-8133-4b08-9963-1cb7a8d7d13c/hero.mp4";
+const T={en:{nav:[["services","Services"],["work","Work"],["markets","Markets"],["about","About"],["news","News"],["articles","Articles"],["contact","Contact"]],cta:"Start your Deal",lang:"عربي",hubs:"CAIRO • ABU DHABI",h1:"Your business, <em>switched on.</em>",sub:"One digital partner for software development and AI-driven marketing — built in Cairo, scaled from Abu Dhabi.",view:"View our work →",
+stats:[[95,"%","Client retention"],[2,"","Regional hubs"],[1,"","Team, one roof"],[120,"+","Projects launched"]],
+sT:"WHAT WE DO // 01",sH:"Tech and marketing, <em>interlocked.</em>",sv:[["Software Development","Custom web platforms, built from zero — no recycled templates."],["Mobile Apps","Native-feel iOS and Android apps that ship fast and scale."],["AI-Driven Marketing","Campaigns measured by real ROI, not just views."],["Branding & Identity","Premium brands tuned for the Gulf and Egyptian markets."],["Dashboards & Data","Live insight into every switch in your business."],["Growth & Support","One team that stays on after launch."]],
+wT:"SELECTED WORK // 02",wH:"Deals we <em>switched on.</em>",wk:[["Fintech platform","UAE","Software"],["Retail super-app","KSA","Mobile"],["Real estate portal","EGY","Web + Marketing"],["Logistics dashboard","UAE","Data"],["Healthcare booking","EGY","Mobile"],["Fashion brand launch","KSA","Branding"]],
+pT:"HOW WE WORK // 03",pH:"From idea to on — in four moves.",pr:[["Discover","We study your market and your numbers."],["Design","A brand and product that feel inevitable."],["Build","Engineering and campaigns, under one roof."],["Switch on","Launch, measure, grow — together."]],
+qT:"CLIENTS // 04",qs:[["They replaced two agencies for us — and delivered faster than both.","COO, Retail group — Dubai"],["Finally a partner that talks about ROI, not just reach.","Founder, Fintech startup — Abu Dhabi"]],
+mT:"MARKETS // 05",mH:"Two hubs. <em>One region.</em>",mk:[["United Arab Emirates","Abu Dhabi hub — client strategy, Gulf campaigns and enterprise partnerships."],["Egypt","Cairo hub — our engineering and creative studio, building every product."],["Saudi Arabia","Vision 2030 brands and retail, served from Abu Dhabi."],["GCC & beyond","Kuwait, Qatar, Bahrain and Oman — one partner across the Gulf."]],
+aT:"ABOUT // 06",aH:"One team, <em>one roof.</em>",aS:"Good Deals brings software engineering and AI-driven marketing together so your business doesn't juggle agencies. Built in Cairo, scaled from Abu Dhabi.",val:[["Built from zero","No recycled templates. Ever."],["ROI first","We measure what moves revenue."],["Bilingual by default","Arabic and English, native in both."],["Stay switched on","We stay after launch."]],partners:"OUR PARTNERS",
+nT:"NEWS // 07",nH:"Company <em>news.</em>",arT:"ARTICLES // 08",arH:"Insights & <em>articles.</em>",read:"Read article →",back:"← Back",
+cH:"Ready to <em>switch on?</em>",cS:"Tell us about your business. We reply within one working day.",form:["Name","Email","Tell us about your project","Send"],sent:"Thanks — we'll be in touch shortly.",rights:"© 2026 Good Deals. All rights reserved.",
+posts:[{id:"abu-dhabi-hub",k:"news",d:"Sep 3, 2026",t:"Our Abu Dhabi hub is officially switched on",e:"A new home for our Gulf clients, linked to our Cairo engineering team."},{id:"team-100",k:"news",d:"Aug 14, 2026",t:"Good Deals passes 120 launched projects",e:"A milestone across the UAE, KSA and Egypt."},{id:"ai-marketing",k:"articles",d:"Oct 12, 2026",t:"How AI-driven marketing is reshaping the Gulf",e:"Why ROI-first campaigns are replacing reach-only spending."},{id:"custom-vs-templates",k:"articles",d:"Jul 21, 2026",t:"Custom platforms vs. templates: the real cost",e:"What recycled templates cost you in speed, security and growth."}],
+body:["Across the region, businesses are asking for more than visibility — they want measurable growth. That shift changes how products are built and how campaigns are run.","At Good Deals, our engineering team in Cairo and our strategy team in Abu Dhabi work as one, so every product ships with the marketing that makes it grow.","The result: fewer handovers, faster launches, and numbers you can actually see on a live dashboard."]},
+ar:{nav:[["services","الخدمات"],["work","أعمالنا"],["markets","الأسواق"],["about","من نحن"],["news","الأخبار"],["articles","المقالات"],["contact","تواصل"]],cta:"ابدأ صفقتك",lang:"EN",hubs:"القاهرة • أبوظبي",h1:"انطلاقة أعمالك، <em>بضغطة زر.</em>",sub:"شريك رقمي واحد لتطوير البرمجيات والتسويق المدعوم بالذكاء الاصطناعي — من القاهرة إلى أبوظبي.",view:"شاهد أعمالنا ←",
+stats:[[95,"%","نسبة الاحتفاظ بالعملاء"],[2,"","مركزان إقليميان"],[1,"","فريق واحد"],[120,"+","مشروع منجز"]],
+sT:"خدماتنا // 01",sH:"التقنية والتسويق، <em>معاً.</em>",sv:[["تطوير البرمجيات","منصات مصممة خصيصاً من الصفر."],["تطبيقات الجوال","تطبيقات سريعة وقابلة للتوسع."],["تسويق بالذكاء الاصطناعي","حملات تُقاس بالعائد الفعلي."],["الهوية والعلامة","علامات فاخرة للسوق الخليجي والمصري."],["لوحات البيانات","رؤية مباشرة لكل تفاصيل أعمالك."],["النمو والدعم","فريق يبقى معك بعد الإطلاق."]],
+wT:"أعمال مختارة // 02",wH:"صفقات <em>أطلقناها.</em>",wk:[["منصة مالية","الإمارات","برمجيات"],["تطبيق تجزئة","السعودية","جوال"],["بوابة عقارية","مصر","ويب وتسويق"],["لوحة لوجستية","الإمارات","بيانات"],["حجز طبي","مصر","جوال"],["إطلاق علامة أزياء","السعودية","هوية"]],
+pT:"طريقتنا // 03",pH:"من الفكرة إلى الإطلاق في أربع خطوات.",pr:[["الاكتشاف","ندرس سوقك وأرقامك."],["التصميم","علامة ومنتج لا يُنسيان."],["البناء","برمجة وتسويق تحت سقف واحد."],["الإطلاق","نطلق ونقيس وننمو معاً."]],
+qT:"عملاؤنا // 04",qs:[["استبدلوا وكالتين بالنسبة لنا — وكانوا أسرع من كليهما.","مدير العمليات، مجموعة تجزئة — دبي"],["أخيراً شريك يتحدث عن العائد وليس الوصول فقط.","مؤسس، شركة تقنية مالية — أبوظبي"]],
+mT:"الأسواق // 05",mH:"مركزان. <em>منطقة واحدة.</em>",mk:[["الإمارات العربية المتحدة","مركز أبوظبي — الاستراتيجية وحملات الخليج والشراكات."],["مصر","مركز القاهرة — استوديو الهندسة والإبداع."],["المملكة العربية السعودية","علامات رؤية 2030 والتجزئة."],["الخليج وما بعده","الكويت وقطر والبحرين وعُمان — شريك واحد."]],
+aT:"من نحن // 06",aH:"فريق واحد، <em>سقف واحد.</em>",aS:"تجمع Good Deals بين هندسة البرمجيات والتسويق بالذكاء الاصطناعي حتى لا تتنقل أعمالك بين الوكالات. بُنيت في القاهرة وتوسعت من أبوظبي.",val:[["من الصفر","لا قوالب جاهزة أبداً."],["العائد أولاً","نقيس ما يحرك الإيرادات."],["ثنائي اللغة","عربي وإنجليزي بإتقان."],["دائماً معك","نبقى بعد الإطلاق."]],partners:"شركاؤنا",
+nT:"الأخبار // 07",nH:"أخبار <em>الشركة.</em>",arT:"المقالات // 08",arH:"رؤى <em>ومقالات.</em>",read:"اقرأ المقال ←",back:"→ رجوع",
+cH:"جاهز <em>للانطلاق؟</em>",cS:"أخبرنا عن أعمالك. نرد خلال يوم عمل واحد.",form:["الاسم","البريد الإلكتروني","أخبرنا عن مشروعك","إرسال"],sent:"شكراً — سنتواصل معك قريباً.",rights:"© 2026 Good Deals. جميع الحقوق محفوظة.",
+posts:[{id:"abu-dhabi-hub",k:"news",d:"3 سبتمبر 2026",t:"مركزنا في أبوظبي انطلق رسمياً",e:"مقر جديد لعملائنا في الخليج مرتبط بفريقنا في القاهرة."},{id:"team-100",k:"news",d:"14 أغسطس 2026",t:"Good Deals تتجاوز 120 مشروعاً",e:"إنجاز عبر الإمارات والسعودية ومصر."},{id:"ai-marketing",k:"articles",d:"12 أكتوبر 2026",t:"كيف يعيد التسويق بالذكاء الاصطناعي تشكيل الخليج",e:"لماذا تحل حملات العائد محل الإنفاق على الوصول."},{id:"custom-vs-templates",k:"articles",d:"21 يوليو 2026",t:"المنصات المخصصة مقابل القوالب: التكلفة الحقيقية",e:"ما تكلفك القوالب الجاهزة من سرعة وأمان ونمو."}],
+body:["في جميع أنحاء المنطقة، تطلب الشركات أكثر من الظهور — تريد نمواً قابلاً للقياس.","في Good Deals يعمل فريق الهندسة في القاهرة وفريق الاستراتيجية في أبوظبي كفريق واحد.","النتيجة: تسليمات أقل، إطلاق أسرع، وأرقام تراها على لوحة مباشرة."]}};
+const PARTNERS=["Microsoft","Google Cloud","AWS","Meta","Shopify","Stripe","HubSpot","Figma"];
+let L=localStorage.getItem("gd-lang")||"en";
+const tg=(t)=>`<p class="tag">${t}</p>`,ph=(t,h,s)=>`<header class="ph"><div class="w">${tg(t)}<h1 class="split">${h}</h1>${s?`<p class="sub rv">${s}</p>`:""}</div></header>`;
+const cards=(a,cl="g")=>`<div class="g ${cl}">${a.map((x,i)=>`<div class="c rv"><small>0${i+1}</small><h3>${x[0]}</h3><p>${x[1]}</p></div>`).join("")}</div>`;
+const statsH=c=>`<section><div class="w stats rv">${c.stats.map(s=>`<div><b data-n="${s[0]}">0</b>${s[1]} ${s[2]}</div>`).join("")}</div></section>`;
+const ctaH=c=>`<section class="cta"><div class="w"><h2 class="rv">${c.cH}</h2><a class="btn" href="#/contact">${c.cta}</a></div></section>`;
+const postList=(c,k)=>c.posts.filter(p=>p.k==k).map(p=>`<a class="row rv" href="#/post/${p.id}"><span style="color:var(--m)">${p.d}</span><h3>${p.t}</h3><p>${p.e}</p></a>`).join("");
+const P={
+"":c=>`<header class="hero"><video autoplay muted loop playsinline src="${VIDEO}"></video><div class="w">${tg(c.hubs)}<h1 class="split">${c.h1}</h1><p class="sub">${c.sub}</p><a class="btn" href="#/work">${c.view}</a></div></header>
+<div class="mq"><div>${"SOFTWARE <i>✦</i> AI MARKETING <i>✦</i> MOBILE APPS <i>✦</i> BRANDING <i>✦</i> DASHBOARDS <i>✦</i> ".repeat(2)}</div></div>${statsH(c)}
+<section><div class="w">${tg(c.sT)}<h2 class="rv">${c.sH}</h2>${cards(c.sv)}</div></section>
+<div class="hz"><div class="st"><div class="tr">${c.wk.map(w=>`<a class="pj" href="#/work"><span>${w[1]}</span><h3>${w[0]}</h3></a>`).join("")}</div></div></div>
+<section><div class="w">${tg(c.pT)}<h2 class="rv">${c.pH}</h2>${cards(c.pr,"g4")}</div></section>
+<section><div class="w">${tg(c.qT)}<div class="g g2">${c.qs.map(q=>`<p class="q rv">“${q[0]}”<small>${q[1]}</small></p>`).join("")}</div></div></section>${ctaH(c)}`,
+services:c=>ph(c.sT,c.sH,c.sub)+`<section style="padding-top:0"><div class="w">${c.sv.map((s,i)=>`<div class="row rv"><b>0${i+1}</b><h3>${s[0]}</h3><p>${s[1]}</p></div>`).join("")}</div></section><section><div class="w">${tg(c.pT)}<h2 class="rv">${c.pH}</h2>${cards(c.pr,"g4")}</div></section>${ctaH(c)}`,
+work:c=>ph(c.wT,c.wH)+`<section style="padding-top:0"><div class="w g g2">${c.wk.map(w=>`<div class="wk rv"><span>${w[1]} · ${w[2]}</span><h3>${w[0]}</h3></div>`).join("")}</div></section>${statsH(c)}${ctaH(c)}`,
+markets:c=>ph(c.mT,c.mH,c.sub)+`<section style="padding-top:0"><div class="w">${c.mk.map((m,i)=>`<div class="row rv"><b>0${i+1}</b><h3>${m[0]}</h3><p>${m[1]}</p></div>`).join("")}</div></section>${ctaH(c)}`,
+about:c=>ph(c.aT,c.aH,c.aS)+statsH(c)+`<section><div class="w">${cards(c.val,"g4")}</div></section><section><div class="w">${tg(c.partners)}<div class="pl rv">${PARTNERS.map(p=>`<div>${p}</div>`).join("")}</div></div></section>${ctaH(c)}`,
+news:c=>ph(c.nT,c.nH)+`<section style="padding-top:0"><div class="w">${postList(c,"news")}</div></section>`,
+articles:c=>ph(c.arT,c.arH)+`<section style="padding-top:0"><div class="w">${postList(c,"articles")}</div></section>`,
+contact:c=>ph(c.hubs,c.cH,c.cS)+`<section style="padding-top:0"><div class="w"><form onsubmit="event.preventDefault();this.innerHTML='<p class=q>'+T[L].sent+'</p>'"><input required placeholder="${c.form[0]}"><input required type="email" placeholder="${c.form[1]}"><textarea rows="5" placeholder="${c.form[2]}"></textarea><button class="btn">${c.form[3]}</button></form></div></section>`,
+post:(c,id)=>{const p=c.posts.find(x=>x.id==id)||c.posts[0];return ph(p.d,p.t,p.e)+`<section style="padding-top:0"><div class="art">${c.body.map(b=>`<p class="rv">${b}</p>`).join("")}<a class="btn" href="#/${p.k}">${c.back}</a></div></section>`}};
+let io;
+function render(){const c=T[L],[r,id]=location.hash.replace(/^#\/?/,"").split("/");
+document.documentElement.lang=L;document.documentElement.dir=L=="ar"?"rtl":"ltr";
+nl.innerHTML=c.nav.map(n=>`<li><a href="#/${n[0]}" class="${r==n[0]||(r=="post"&&n[0]==(c.posts.find(p=>p.id==id)||{}).k)?"on":""}">${n[1]}</a></li>`).join("");nl.classList.remove("op");
+lb.textContent=c.lang;nc.textContent=c.cta;ft.textContent=c.rights;
+app.innerHTML=(P[r]||P[""])(c,id);scrollTo(0,0);
+document.querySelectorAll(".split").forEach(h=>{const d=document.createElement("div");d.innerHTML=h.innerHTML;let i=0;const wrap=n=>[...n.childNodes].forEach(k=>{if(k.nodeType==3){const f=document.createDocumentFragment();k.textContent.split(/\s+/).filter(Boolean).forEach(w=>{const s=document.createElement("span");s.className="wd";s.textContent=w;s.style.transitionDelay=(i++*0.1+0.2)+"s";f.appendChild(s)});k.replaceWith(f)}else wrap(k)});wrap(d);h.innerHTML=d.innerHTML;requestAnimationFrame(()=>setTimeout(()=>h.querySelectorAll(".wd").forEach(e=>e.classList.add("in")),started?50:1300))});
+io&&io.disconnect();io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add("in");io.unobserve(e.target);e.target.querySelectorAll("[data-n]").forEach(b=>{let n=+b.dataset.n,t=0,s=setInterval(()=>{t++;b.textContent=Math.round(n*t/40);if(t>=40)clearInterval(s)},30)})}),{threshold:.15});
+document.querySelectorAll(".rv").forEach(e=>io.observe(e));}
+let started=false;
+lb.onclick=()=>{L=L=="en"?"ar":"en";localStorage.setItem("gd-lang",L);render()};
+mb.onclick=()=>nl.classList.toggle("op");
+addEventListener("hashchange",render);render();
+setTimeout(()=>{ld.classList.add("go");started=true},1200);
+addEventListener("scroll",()=>{const hz=document.querySelector(".hz");if(!hz)return;const tr=hz.querySelector(".tr"),r=hz.getBoundingClientRect(),p=Math.min(1,Math.max(0,-r.top/(hz.offsetHeight-innerHeight)));tr.style.transform=`translateX(${-p*(tr.scrollWidth-innerWidth+48)}px)`});
+addEventListener("mousemove",e=>{cur.style.left=e.clientX+"px";cur.style.top=e.clientY+"px"});
+</script></body></html>
