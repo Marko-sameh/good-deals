@@ -1,0 +1,398 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Good Deals — Your business, switched on.</title>
+<meta name="description" content="Software development and AI-driven marketing from Cairo and Abu Dhabi. One digital partner, one roof.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070F1E;--s:#212B4C;--n:#E2E8F0;--m:#9AA6BF;--a:#BFF747;--card:#111B31;--surf:#0B1528;--bd:#E2E8F01a;--inp:#E2E8F026;--glow:0 0 60px -10px #BFF7478c}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--n);font-family:"Plus Jakarta Sans","Somar Sans",Cairo,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+html[dir=rtl] body,html[dir=rtl] h1,html[dir=rtl] h2,html[dir=rtl] h3{font-family:"Somar Sans",Cairo,sans-serif}
+a{color:inherit;text-decoration:none;cursor:pointer}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+input,textarea{font:inherit}
+h1,h2,h3{font-family:"Plus Jakarta Sans","Somar Sans",Cairo,sans-serif;letter-spacing:-.01em}
+.w{max-width:1200px;margin-inline:auto;padding-inline:24px}
+.cyber{background-image:linear-gradient(var(--bd) .5px,transparent .5px),linear-gradient(90deg,var(--bd) .5px,transparent .5px);background-size:64px 64px}
+.glass{background:#111B31b3;backdrop-filter:blur(16px);border:1px solid var(--bd)}
+/* loader */
+#ld{position:fixed;inset:0;z-index:120;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;transition:transform .9s cubic-bezier(.7,0,.2,1)}
+#ld.go{transform:translateY(-100%)}
+#ld .bar{height:1px;width:190px;background:var(--bd);overflow:hidden}
+#ld .bar i{display:block;height:100%;width:0;background:var(--a);transition:width 1.4s cubic-bezier(.22,1,.36,1)}
+/* cursor */
+#cur{position:fixed;left:-100px;top:-100px;width:12px;height:12px;border-radius:50%;background:var(--a);pointer-events:none;z-index:110;mix-blend-mode:difference;transform:translate(-50%,-50%);transition:width .3s,height .3s;display:none}
+@media(hover:hover) and (min-width:900px){#cur{display:block}}
+/* nav */
+nav{position:fixed;inset-inline:0;top:0;z-index:60;padding:22px 0;transition:padding .4s,background .4s,backdrop-filter .4s}
+nav.st{padding:12px 0;background:#070F1Ef8;backdrop-filter:blur(14px);border-bottom:1px solid var(--bd)}
+nav .w{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.lg{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;letter-spacing:.04em}
+.lg svg{height:30px;width:auto}
+nav ul{display:flex;gap:26px;list-style:none;font-size:14px;color:var(--m)}
+nav ul a:hover,nav ul a.on{color:var(--a)}
+.r{display:flex;align-items:center;gap:10px}
+.lb{border:1px solid var(--bd);border-radius:99px;padding:7px 14px;font-size:12px;font-weight:800;transition:.3s}
+.lb:hover{border-color:var(--a);color:var(--a)}
+.btn{background:var(--a);color:var(--bg);padding:14px 26px;border-radius:99px;font-weight:800;display:inline-flex;align-items:center;gap:8px;border:0;transition:.3s}
+.btn:hover{box-shadow:var(--glow)}
+.ghost{border:1px solid var(--bd);border-radius:99px;padding:14px 26px;font-weight:800;transition:.3s;display:inline-flex;gap:8px;align-items:center}
+.ghost:hover{border-color:var(--a);color:var(--a)}
+#mb{display:none;font-size:22px}
+/* hero */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding:130px 0 70px}
+.hero>video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;will-change:transform}
+.hero .fade{position:absolute;inset:0;background:linear-gradient(to top,var(--bg),#070F1E99 55%,#070F1E55)}
+.hero .gl{position:absolute;inset-inline-end:-10%;top:22%;height:480px;width:480px;border-radius:50%;background:var(--a);filter:blur(160px);opacity:.12;transition:opacity 1.2s}
+.hero .gl.on{opacity:.25}
+.hero .w{position:relative;z-index:3;display:grid;gap:56px;align-items:center;width:100%}
+@media(min-width:1000px){.hero .w{grid-template-columns:1.3fr 1fr}}
+.tag{color:var(--a);font-size:12px;letter-spacing:.3em;font-weight:800}
+h1{font-size:clamp(42px,7.4vw,104px);line-height:1.03;font-weight:800}
+h1 em{color:var(--a);font-style:normal}
+.sub{max-width:560px;margin-top:28px;color:var(--m);font-size:18px;line-height:1.7}
+.cta{margin-top:38px;display:flex;flex-wrap:wrap;gap:14px}
+.sw{border-radius:26px;padding:24px}
+.sw .top{display:flex;align-items:center;justify-content:space-between;gap:14px;background:var(--surf);border-radius:18px;padding:18px;margin-bottom:16px;width:100%}
+.sw .top svg{height:34px;width:auto}
+.tg{position:relative;height:36px;width:64px;border-radius:99px;background:var(--s);transition:background .5s}
+.tg.on{background:var(--a);box-shadow:var(--glow)}
+.tg i{position:absolute;top:4px;inset-inline-start:4px;height:28px;width:28px;border-radius:50%;background:var(--n);transition:inset-inline-start .4s cubic-bezier(.22,1,.36,1)}
+.tg.on i{inset-inline-start:32px}
+.st-r{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid var(--bd);border-radius:14px;padding:13px 16px;font-size:14px;margin-bottom:10px}
+.st-r span:last-child{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:800;letter-spacing:.14em;color:var(--m);transition:color .5s}
+.st-r.on span:last-child{color:var(--a)}
+.dot{height:8px;width:8px;border-radius:50%;background:var(--m)}
+.st-r.on .dot{background:var(--a);animation:pu 1.6s infinite}
+@keyframes pu{50%{opacity:.35}}
+.scrl{position:absolute;bottom:26px;inset-inline-start:50%;height:48px;width:1px;background:var(--bd);overflow:hidden;z-index:3}
+.scrl i{display:block;height:100%;background:var(--a);animation:sq 2s infinite}
+@keyframes sq{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+/* marquee */
+.mq{border-block:1px solid var(--bd);background:var(--surf);padding:22px 0;overflow:hidden;direction:ltr}
+.mq div{display:flex;gap:56px;width:max-content;animation:mq 30s linear infinite;font-size:clamp(26px,4vw,46px);font-weight:800;color:#E2E8F059;white-space:nowrap}
+.mq i{color:var(--a);font-style:normal}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* sections */
+section{padding:96px 0}
+h2{font-size:clamp(30px,4.6vw,62px);font-weight:800;line-height:1.12}
+.lead{margin-top:18px;color:var(--m);font-size:18px;max-width:640px;line-height:1.7}
+/* trust */
+.trust{text-align:center}
+.trust .bg{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:32px}
+.trust b{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--bd);background:var(--card);border-radius:99px;padding:12px 20px;font-size:13px;font-weight:800;color:var(--m);transition:.35s}
+.trust b:hover{border-color:var(--a);color:var(--a);box-shadow:var(--glow)}
+.trust b svg{height:15px;width:15px;opacity:.6}
+/* cards */
+.g{display:grid;gap:18px;grid-template-columns:repeat(3,1fr);margin-top:56px}
+.g2{grid-template-columns:repeat(2,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.c{position:relative;overflow:hidden;background:var(--card);border:1px solid var(--bd);border-radius:22px;padding:30px;transition:.45s;display:block;height:100%}
+.c:hover{transform:translateY(-6px);border-color:#BFF74799;box-shadow:var(--glow)}
+.c small{color:var(--a);font-weight:800;font-size:13px}
+.c h3{font-size:20px;margin:16px 0 10px}
+.c p{color:var(--m);font-size:14px;line-height:1.7}
+/* rows */
+.row{display:grid;grid-template-columns:110px 1fr 1fr;gap:24px;align-items:center;border-top:1px solid var(--bd);padding:38px 0;transition:.4s}
+.row:hover{background:#0B152866}
+.row b{font-size:44px;font-weight:800;color:#BFF74766;transition:.4s}
+.row:hover b{color:var(--a)}
+.row h3{font-size:clamp(24px,3.2vw,40px);font-weight:800;transition:.4s}
+.row:hover h3{color:var(--a);transform:translateX(12px)}
+html[dir=rtl] .row:hover h3{transform:translateX(-12px)}
+.row p{color:var(--m);line-height:1.7}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.stats b{display:block;font-size:clamp(44px,6vw,72px);font-weight:800;color:var(--a)}
+.stats p{color:var(--m);font-size:14px;margin-top:6px}
+/* pinned work */
+.hz{height:300vh;position:relative}
+.hz .st{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;overflow:hidden;direction:ltr;padding-top:110px;box-sizing:border-box}
+.tr{display:flex;gap:24px;padding-inline:24px;will-change:transform}
+.pj{position:relative;flex:0 0 min(560px,82vw);height:56vh;border-radius:26px;overflow:hidden;border:1px solid var(--bd);background:var(--card)}
+.pj .gr{position:absolute;inset:0;opacity:.6;transition:transform .7s}
+.pj:hover .gr{transform:scale(1.1)}
+.pj .mock{position:absolute;inset:32px;border-radius:18px;border:1px solid var(--bd);background:linear-gradient(135deg,var(--s),var(--surf));padding:22px}
+.pj .mock u{display:block;height:10px;width:50%;border-radius:9px;background:#BFF747b3;text-decoration:none}
+.pj .mock s{display:block;height:7px;border-radius:9px;background:#9AA6BF4d;text-decoration:none;margin-top:10px}
+.pj .mock .b{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+.pj .mock .b i{height:60px;border-radius:10px;background:var(--s)}
+.pj .cap{position:absolute;inset-inline:0;bottom:0;padding:28px;display:flex;align-items:flex-end;justify-content:space-between;background:linear-gradient(to top,var(--bg),transparent)}
+.pj .cap span{color:var(--a);font-size:12px;font-weight:800;letter-spacing:.14em}
+.pj .cap h3{font-size:26px;margin-top:4px}
+.pj .go{height:46px;width:46px;border-radius:50%;background:var(--a);color:var(--bg);display:grid;place-items:center;transition:transform .4s}
+.pj:hover .go{transform:rotate(45deg)}
+/* process */
+.pr{position:relative;margin-top:64px;padding-inline-start:44px}
+.pr .line{position:absolute;inset-inline-start:7px;top:0;height:100%;width:1px;background:var(--bd)}
+.pr .line i{display:block;width:100%;height:0;background:var(--a);box-shadow:var(--glow)}
+.step{position:relative;margin-bottom:64px}
+.step:last-child{margin-bottom:0}
+.step .knob{position:absolute;inset-inline-start:-44px;top:8px;height:15px;width:15px;border-radius:50%;border:2px solid var(--a);background:var(--bg)}
+.step small{color:var(--a);font-weight:800;font-size:13px;letter-spacing:.1em}
+.step h3{font-size:clamp(26px,3.4vw,38px);font-weight:800;margin-top:8px}
+.step p{color:var(--m);margin-top:10px;max-width:420px;line-height:1.7}
+/* quotes */
+.qt{background:var(--surf);text-align:center}
+.qbox{min-height:210px;display:grid;place-items:center;margin-top:34px}
+.qbox p{font-size:clamp(22px,3vw,36px);font-weight:700;line-height:1.4;max-width:820px;transition:.6s}
+.qbox small{display:block;color:var(--m);font-size:14px;margin-top:22px;font-weight:600}
+.qbox.out{opacity:0;transform:translateY(-20px)}
+.dots{display:flex;justify-content:center;gap:8px;margin-top:26px}
+.dots button{height:6px;width:16px;border-radius:99px;background:var(--bd);transition:.3s}
+.dots button.on{width:40px;background:var(--a)}
+/* reels */
+.rl{display:grid;gap:18px;grid-template-columns:repeat(3,1fr);margin-top:52px}
+.rlc{position:relative;aspect-ratio:9/12;border-radius:22px;overflow:hidden;border:1px solid var(--bd);display:block;width:100%}
+.rlc video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55;transition:.7s}
+.rlc:hover video{opacity:.9;transform:scale(1.08)}
+.rlc .pl{position:absolute;inset:0;display:grid;place-items:center}
+.rlc .pl i{height:60px;width:60px;border-radius:50%;background:var(--a);color:var(--bg);display:grid;place-items:center;box-shadow:var(--glow)}
+.rlc h3{position:absolute;bottom:20px;inset-inline-start:20px;font-size:18px}
+/* modal */
+#md{position:fixed;inset:0;z-index:100;background:#070F1Ef2;backdrop-filter:blur(10px);display:none;place-items:center;padding:24px}
+#md.op{display:grid}
+#md .in{position:relative;width:100%;max-width:900px;border-radius:22px;overflow:hidden;border:1px solid var(--bd)}
+#md video{width:100%;display:block}
+#md .x{position:absolute;top:12px;inset-inline-end:12px;height:38px;width:38px;border-radius:50%;background:#070F1Ecc;display:grid;place-items:center}
+/* partners */
+.pl-m{border-block:1px solid var(--bd);background:var(--surf);padding:26px 0;overflow:hidden;direction:ltr}
+.pl-m div{display:flex;gap:70px;width:max-content;animation:mq 30s linear infinite;font-size:clamp(28px,4.5vw,54px);font-weight:800;color:#E2E8F059;white-space:nowrap}
+.pg{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--bd);border-radius:22px;overflow:hidden;margin-top:56px}
+.pg div{background:var(--bg);padding:52px 18px;text-align:center;font-weight:800;font-size:19px;color:var(--m);transition:.4s}
+.pg div:hover{background:var(--a);color:var(--bg)}
+/* form */
+form{display:grid;gap:14px}
+input,textarea{background:var(--surf);border:1px solid var(--inp);border-radius:14px;padding:16px;color:var(--n);outline:none;transition:.3s;width:100%}
+input:focus,textarea:focus{border-color:var(--a)}
+.sent{padding:60px 0;text-align:center;font-size:22px;font-weight:800;color:var(--a)}
+/* hub chat */
+#hub{position:fixed;bottom:22px;inset-inline-end:22px;z-index:80;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+#hub .pn{width:250px;border-radius:20px;padding:16px;display:none;box-shadow:var(--glow)}
+#hub .pn.op{display:block}
+#hub .pn p{font-size:14px;font-weight:800;margin-bottom:12px}
+#hub .pn a{display:flex;justify-content:space-between;gap:10px;border:1px solid var(--bd);border-radius:14px;padding:12px 14px;font-size:14px;margin-bottom:8px;transition:.3s}
+#hub .pn a:hover{border-color:var(--a);color:var(--a)}
+#hub .pn a s{color:var(--m);font-size:12px;text-decoration:none}
+#hub .bb{height:54px;width:54px;border-radius:50%;background:var(--a);color:var(--bg);display:grid;place-items:center;box-shadow:var(--glow);transition:transform .3s}
+#hub .bb:hover{transform:scale(1.1)}
+/* misc */
+.rv{opacity:0;transform:translateY(42px);transition:1s cubic-bezier(.22,1,.36,1)}
+.rv.in{opacity:1;transform:none}
+.wd{display:inline-block;overflow:hidden;padding-bottom:.12em;vertical-align:bottom}
+.wd i{display:inline-block;font-style:normal;transform:translateY(110%);transition:transform 1s cubic-bezier(.22,1,.36,1)}
+.wd.in i{transform:none}
+.ph{padding:180px 0 76px;position:relative;overflow:hidden}
+.ph .gl{position:absolute;inset-inline-end:-8%;top:0;height:380px;width:380px;border-radius:50%;background:var(--a);filter:blur(160px);opacity:.18}
+.art{max-width:720px;font-size:18px;line-height:1.9;color:#CFD6E3}
+.art p{margin-bottom:24px}
+.ctab{text-align:center;border-top:1px solid var(--bd);padding:110px 0}
+footer{border-top:1px solid var(--bd);background:var(--surf);padding:56px 0 0}
+footer .w{display:grid;gap:34px;grid-template-columns:1.2fr 1fr 1fr 1fr}
+footer .tg2{color:var(--m);font-size:11px;letter-spacing:.25em;margin-top:14px}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:9px;font-size:14px;color:var(--m)}
+footer ul a:hover{color:var(--a)}
+footer .ct{font-size:14px;color:var(--m);display:flex;flex-direction:column;gap:11px}
+footer .ct span{display:flex;align-items:center;gap:9px}
+footer .ct svg{height:15px;width:15px;color:var(--a);flex:none}
+footer .soc{display:flex;flex-wrap:wrap;gap:14px;font-size:14px;color:var(--m)}
+footer .soc a:hover{color:var(--a)}
+footer .cp{border-top:1px solid var(--bd);margin-top:44px;padding:22px 0;text-align:center;font-size:12px;color:var(--m)}
+@media(max-width:1000px){nav ul{display:none;position:absolute;top:100%;inset-inline:0;background:#070F1E;border-bottom:1px solid var(--bd);box-shadow:0 30px 60px -20px #000c;flex-direction:column;padding:26px 24px 30px;gap:16px;font-size:19px;min-height:calc(100vh - 62px);max-height:calc(100vh - 62px);overflow:auto}nav ul.op{display:flex}#mb{display:block}.g,.g4,.pg{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.row{grid-template-columns:1fr;gap:10px}.rl{grid-template-columns:1fr}.hz{height:190vh}.hz .st{justify-content:flex-start;padding-top:104px;gap:26px}.pj{height:52vh}.hero{padding-bottom:120px}#hub .bb{height:46px;width:46px}#hub .pn{width:220px}footer .w{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.g,.g2,.g4,.pg,.stats{grid-template-columns:1fr}footer .w{grid-template-columns:1fr}.hide{display:none}}
+</style></head><body>
+<div id="ld"><span class="lg" id="ldl"></span><span class="bar"><i id="ldb"></i></span></div>
+<div id="cur"></div>
+<nav id="nv"><div class="w"><a class="lg" href="#/" id="nlg"></a><ul id="nl"></ul><div class="r"><button class="lb" id="lb"></button><a class="btn hide" href="#/contact" id="nc"></a><button id="mb" aria-label="Menu">☰</button></div></div></nav>
+<main id="app"></main>
+<div id="md"><div class="in"><video id="mdv" controls></video><button class="x" id="mdx" aria-label="Close">✕</button></div></div>
+<div id="hub"><div class="pn glass" id="hpn"></div><button class="bb" id="hbb" aria-label="Talk to a hub">💬</button></div>
+<footer><div class="w"><div><span class="lg" id="flg"></span><p class="tg2" id="ftg"></p></div><ul id="fnl"></ul><div class="ct" id="fct"></div><div class="soc" id="fsoc"></div></div><p class="cp" id="fcp"></p></footer>
+<script>
+const VIDEO="https://id-preview--df00abd6-a474-4305-a542-106958f38bad.lovable.app/__l5e/assets-v1/3804a47a-8133-4b08-9963-1cb7a8d7d13c/hero.mp4";
+const MARK=`<svg viewBox="0 0 120 70" aria-hidden="true"><path d="M58 22 A26 26 0 1 0 60 44 L44 44" fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="round" style="color:#E2E8F0"/><path d="M66 9 L82 9 A26 26 0 0 1 82 61 L66 61 Z" fill="none" stroke="#BFF747" stroke-width="11" stroke-linejoin="round"/></svg>`;
+const IC={
+ check:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>`,
+ pin:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>`,
+ tel:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2Z"/></svg>`,
+ mail:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>`,
+ arr:`<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>`,
+ play:`<svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>`
+};
+const T={
+en:{
+ nav:[["services","Services"],["work","Work"],["markets","Markets"],["partners","Partners"],["news","News"],["articles","Articles"],["about","About"],["contact","Contact"]],
+ cta:"Start your Deal",lang:"عربي",hubs:"CAIRO  •  ABU DHABI",
+ h1a:"Your business,",h1b:"switched on.",
+ sub:"Empowering enterprises with full-stack digital solutions — built in Cairo, scaled from Abu Dhabi.",
+ view:"View our work",
+ stats:[[95,"%","Client retention"],[2,"","Regional hubs"],[1,"","Team, one roof"],[120,"+","Projects launched"]],
+ status:[["Website","LIVE"],["Mobile App","DEPLOYED"],["Campaign","RUNNING"],["Dashboard","ON"]],
+ sT:"WHAT WE DO // 01",sH:"Tech and marketing, interlocked.",
+ sv:[["Software Development","Custom web platforms, built from zero — no recycled templates."],["Mobile Apps","Native-feel iOS and Android apps that ship fast and scale."],["AI-Driven Marketing","Campaigns measured by real ROI, not just views."],["Branding & Identity","Premium brands tuned for the Gulf and Egyptian markets."],["Dashboards & Data","Live insight into every switch in your business."],["Growth & Support","One team that stays on after launch."],["Annual Reports & Investor Decks","Board-ready reports and pitch decks for enterprises and listed companies."],["Video Production & Events","Promo films, reels and full event coverage across the Gulf and Egypt."],["Strategy & Marketing Audit","A clear growth plan built on a full audit of your channels."]],
+ trustTag:"ACCREDITED & CERTIFIED",trust:["Meta Business Partner","Google Partner","ISO 9001:2015","ISO 27001:2022","AWS Partner","TikTok Marketing Partner"],
+ reelsTag:"IN MOTION // 03",reelsH:"Watch our work, switched on.",reels:["Brand film","Campaign reel","Event coverage"],
+ hubsTitle:"Talk to a hub",hubs:[["Cairo office","Egypt","201000000000"],["Abu Dhabi office","UAE","971503172004"]],
+ wT:"SELECTED WORK // 02",wH:"Deals we switched on.",
+ wk:[["Fintech platform","UAE"],["Retail super-app","KSA"],["Real estate portal","EGY"],["Logistics dashboard","UAE"],["Healthcare booking","EGY"]],
+ pT:"HOW WE WORK // 03",pH:"From idea to on — in four moves.",
+ pr:[["Discover","We study your market and your numbers."],["Design","A brand and product that feel inevitable."],["Build","Engineering and campaigns, under one roof."],["Switch on","Launch, measure, grow — together."]],
+ qT:"CLIENTS // 04",qs:[["They replaced two agencies for us — and delivered faster than both.","COO, Retail group — Dubai"],["Finally a partner that talks about ROI, not just reach.","Founder, Fintech startup — Abu Dhabi"],["Design, code and marketing that actually fit together.","CMO, Real estate — Cairo"]],
+ mT:"MARKETS // 05",mH:"Two hubs. One region.",
+ mk:[["United Arab Emirates","Abu Dhabi hub — client strategy, Gulf campaigns and enterprise partnerships."],["Egypt","Cairo hub — our engineering and creative studio, building every product."],["Saudi Arabia","Vision 2030 brands and retail, served from Abu Dhabi."],["GCC & beyond","Kuwait, Qatar, Bahrain and Oman — one partner across the Gulf."]],
+ aT:"ABOUT US // 06",aH:"One team, one roof.",
+ aS:"Good Deals brings software engineering and AI-driven marketing together so your business doesn't juggle agencies. Built in Cairo, scaled from Abu Dhabi.",
+ val:[["Built from zero","No recycled templates. Ever."],["ROI first","We measure what moves revenue."],["Bilingual by default","Arabic and English, native in both."],["Stay switched on","We stay after launch."]],
+ pTn:"PARTNERS // 05",pHn:"We build with the best.",pS:"World-class platforms behind every project we launch.",
+ partners:["Microsoft","Google Cloud","AWS","Meta","Shopify","Stripe","HubSpot","Figma"],
+ nT:"NEWS // 07",nH:"News & insights.",arT:"ARTICLES // 08",arH:"Insights & articles.",read:"Read article",back:"← Back to news",
+ cH:"Ready to switch on?",cS:"Tell us about your business. We reply within one working day.",
+ form:["Name","Email","Tell us about your project","Send"],sent:"Thanks — we'll be in touch shortly.",
+ rights:"All rights reserved.",tagline:"YOUR BUSINESS, SWITCHED ON.",
+ posts:[
+  {id:"abu-dhabi-hub",k:"news",d:"Sep 3, 2026",t:"Our Abu Dhabi hub is officially switched on",e:"A new home for our Gulf clients, linked to our Cairo engineering team.",b:["Our Abu Dhabi hub is now open as the front door for every client in the Gulf — strategy, partnerships and growth all sit in one place.","The team there works directly with our Cairo engineering studio, so a brief raised in Abu Dhabi turns into shipped code without leaving the company.","If you want to talk in person, the hub is open Sunday to Thursday. Book a time through the contact form and we'll confirm within one working day."]},
+  {id:"team-100",k:"news",d:"Aug 14, 2026",t:"Good Deals passes 120 launched projects",e:"A milestone across the UAE, KSA and Egypt.",b:["One hundred and twenty products, platforms and campaigns are now live with clients across the UAE, Saudi Arabia and Egypt.","The mix tells the story: roughly half are software and dashboards, the rest are brands, content and marketing programs run for the same clients.","We're counting the next hundred the same way — one team, one roof, and numbers the client can see on a live dashboard."]},
+  {id:"ai-marketing",k:"articles",d:"Oct 12, 2026",t:"How AI-driven marketing is reshaping the Gulf",e:"Why ROI-first campaigns are replacing reach-only spending across the UAE and KSA.",b:["Across the region, businesses are asking for more than visibility — they want measurable growth. That shift changes how products are built and how campaigns are run.","AI-driven marketing means the creative and the media plan are tested against real revenue signals, not just impressions. The spend follows what actually converts.","At Good Deals, our engineering team in Cairo and our strategy team in Abu Dhabi work as one, so every product ships with the marketing that makes it grow."]},
+  {id:"custom-vs-templates",k:"articles",d:"Jul 21, 2026",t:"Custom platforms vs. templates: the real cost",e:"What recycled templates cost you in speed, security and growth.",b:["A template looks cheaper until the day you need something it wasn't built for. Then every change is a fight with someone else's code.","Custom platforms cost more in week one and less in year two — no licence renewals, no plugin debt, no security holes you inherited.","The honest answer: if your business process is standard, a template is fine. The moment it becomes your advantage, build it properly."]}
+ ]
+},
+ar:{
+ nav:[["services","الخدمات"],["work","أعمالنا"],["markets","الأسواق"],["partners","شركاؤنا"],["news","الأخبار"],["articles","المقالات"],["about","من نحن"],["contact","تواصل"]],
+ cta:"ابدأ صفقتك",lang:"EN",hubs:"القاهرة  •  أبوظبي",
+ h1a:"شريك النمو الرقمي...",h1b:"بلمسة واحدة",
+ sub:"تأسيس وإطلاق أعمالك الرقمية بتكة زرار. حلول متكاملة في البرمجة والتسويق تمنح أعمالك انطلاقة فورية.",
+ view:"شاهد أعمالنا",
+ stats:[[95,"%","نسبة الاحتفاظ بالعملاء"],[2,"","مركزان إقليميان"],[1,"","فريق واحد"],[120,"+","مشروع منجز"]],
+ status:[["موقع","مباشر"],["تطبيق","منشور"],["حملة","تعمل"],["لوحة","تشغيل"]],
+ sT:"خدماتنا // 01",sH:"التقنيـــة والتسويـــق، معاً",
+ sv:[["تطوير البرمجيات","منصات مصممة خصيصاً من الصفر."],["تطبيقات الجوال","تطبيقات سريعة وقابلة للتوسع."],["تسويق بالذكاء الاصطناعي","حملات تُقاس بالعائد الفعلي."],["الهوية والعلامة","علامات فاخرة للسوق الخليجي والمصري."],["لوحات البيانات","رؤية مباشرة لكل تفاصيل أعمالك."],["النمو والدعم","فريق يبقى معك بعد الإطلاق."],["التقارير السنوية والعروض الاستثمارية","تقارير وعروض جاهزة لمجالس الإدارة والشركات المدرجة."],["الإنتاج المرئي والفعاليات","أفلام ترويجية وريلز وتغطية كاملة للفعاليات."],["الاستراتيجية والتدقيق التسويقي","خطة نمو واضحة مبنية على تدقيق شامل لقنواتك."]],
+ trustTag:"الاعتمادات والشهادات",trust:["Meta Business Partner","Google Partner","ISO 9001:2015","ISO 27001:2022","AWS Partner","TikTok Marketing Partner"],
+ reelsTag:"أعمالنا بالفيديو // 03",reelsH:"شاهد أعمالنا وهي تنطلـــــق",reels:["فيلم العلامة","ريل الحملة","تغطية فعالية"],
+ hubsTitle:"تواصل مع مكتبك",hubs:[["مكتب القاهرة","مصر","201000000000"],["مكتب أبوظبي","الإمارات","971503172004"]],
+ wT:"أعمال مختارة // 02",wH:"صفقات أطلقناها",
+ wk:[["منصة مالية","الإمارات"],["تطبيق تجزئة","السعودية"],["بوابة عقارية","مصر"],["لوحة لوجستية","الإمارات"],["حجز طبي","مصر"]],
+ pT:"طريقتنا // 03",pH:"من الفكرة إلى الإطلاق في أربع خطوات",
+ pr:[["الاكتشاف","ندرس سوقك وأرقامك."],["التصميم","علامة ومنتج لا يُنسيان."],["البناء","برمجة وتسويق تحت سقف واحد."],["الإطلاق","نطلق ونقيس وننمو معاً."]],
+ qT:"عملاؤنا // 04",qs:[["استبدلوا وكالتين بالنسبة لنا — وكانوا أسرع من كليهما.","مدير العمليات، مجموعة تجزئة — دبي"],["أخيراً شريك يتحدث عن العائد وليس الوصول فقط.","مؤسس، شركة تقنية مالية — أبوظبي"],["تصميم وبرمجة وتسويق متناغمة فعلاً.","مدير التسويق، عقارات — القاهرة"]],
+ mT:"الأسواق // 05",mH:"مركزان. منطقة واحدة",
+ mk:[["الإمارات العربية المتحدة","مركز أبوظبي — الاستراتيجية وحملات الخليج والشراكات."],["مصر","مركز القاهرة — استوديو الهندسة والإبداع."],["المملكة العربية السعودية","علامات رؤية 2030 والتجزئة."],["الخليج وما بعده","الكويت وقطر والبحرين وعُمان — شريك واحد."]],
+ aT:"من نحن // 06",aH:"فريق واحد، سقف واحد",
+ aS:"تجمع Good Deals بين هندسة البرمجيات والتسويق بالذكاء الاصطناعي حتى لا تتنقل أعمالك بين الوكالات. بُنيت في القاهرة وتوسعت من أبوظبي.",
+ val:[["من الصفر","لا قوالب جاهزة أبداً."],["العائد أولاً","نقيس ما يحرك الإيرادات."],["ثنائي اللغة","عربي وإنجليزي بإتقان."],["دائماً معك","نبقى بعد الإطلاق."]],
+ pTn:"شركاؤنا // 05",pHn:"نبني مع الأفضل",pS:"منصات عالمية تدعم كل مشروع نطلقه.",
+ partners:["Microsoft","Google Cloud","AWS","Meta","Shopify","Stripe","HubSpot","Figma"],
+ nT:"الأخبار // 07",nH:"أخبار ورؤى",arT:"المقالات // 08",arH:"رؤى ومقالات",read:"اقرأ المقال",back:"→ رجوع",
+ cH:"جاهز للانطلاق؟",cS:"أخبرنا عن أعمالك. نرد خلال يوم عمل واحد.",
+ form:["الاسم","البريد الإلكتروني","أخبرنا عن مشروعك","إرسال"],sent:"شكراً — سنتواصل معك قريباً.",
+ rights:"جميع الحقوق محفوظة.",tagline:"أعمالك، تنطلقة بلمسة.",
+ posts:[
+  {id:"abu-dhabi-hub",k:"news",d:"3 سبتمبر 2026",t:"مركزنا في أبوظبي انطلق رسمياً",e:"مقر جديد لعملائنا في الخليج مرتبط بفريقنا الهندسي في القاهرة.",b:["مركز أبوظبي الآن هو البوابة الأولى لكل عملائنا في الخليج — الاستراتيجية والشراكات والنمو في مكان واحد.","يعمل الفريق هناك مباشرة مع استوديو الهندسة في القاهرة، فتتحول الفكرة المطروحة في أبوظبي إلى منتج منشور دون أن تخرج من الشركة.","للقاء وجهًا لوجه، المركز مفتوح من الأحد إلى الخميس. احجز موعدك من نموذج التواصل ونؤكد لك خلال يوم عمل واحد."]},
+  {id:"team-100",k:"news",d:"14 أغسطس 2026",t:"Good Deals تتجاوز 120 مشروعاً",e:"إنجاز عبر الإمارات والسعودية ومصر.",b:["أكثر من 120 منتجاً ومنصة وحملة تعمل الآن مع عملاء في الإمارات والسعودية ومصر.","التوزيع يحكي القصة: نحو النصف برمجيات ولوحات بيانات، والباقي علامات ومحتوى وبرامج تسويق لنفس العملاء.","نعد المئة القادمة بنفس الطريقة — فريق واحد، سقف واحد، وأرقام يراها العميل على لوحة مباشرة."]},
+  {id:"ai-marketing",k:"articles",d:"12 أكتوبر 2026",t:"كيف يعيد التسويق بالذكاء الاصطناعي تشكيل الخليج",e:"لماذا تحل الحملات المبنية على العائد محل الإنفاق على الوصول فقط.",b:["في أنحاء المنطقة، تطلب الشركات أكثر من الظهور — تريد نمواً قابلاُ للقياس. هذا التحول يغير طريقة بناء المنتجات وإدارة الحملات.","التسويق بالذكاء الاصطناعي يعني اختبار الإبداع والخطة الإعلامية أمام إشارات عائد حقيقية، وليس مرات ظهور فقط.","في Good Deals يعمل فريق الهندسة في القاهرة وفريق الاستراتيجية في أبوظبي كفريق واحد، فيُطلق كل منتج ومعه التسويق الذي ينمّيه."]},
+  {id:"custom-vs-templates",k:"articles",d:"21 يوليو 2026",t:"المنصات المخصصة مقابل القوالب: التكلفة الحقيقية",e:"ما تكلفك القوالب الجاهزة من سرعة وأمان ونمو.",b:["القالب يبدو أرخص حتى تحتاج شيئاُ لم يُبنَ من أجله. ساعتها كل تعديل يصبح معركة مع كود كتبته جهة أخرى.","المنصة المخصصة تكلف أكثر في الأسبوع الأول وأقل في السنة الثانية — لا تجديد تراخيص، ولا ديون إضافات، ولا ثغرات ورثتها.","الإجابة الصادقة: إذا كانت إجراءاتك اعتيادية فالقالب يكفي. أما إذا أصبحت ميزتك، فابنها بشكل صحيح."]}
+ ]
+}};
+let L=localStorage.getItem("gd-lang")||"en", started=false, io, qTimer;
+const $=id=>document.getElementById(id);
+const tg=t=>`<p class="tag">${t}</p>`;
+const ph=(t,h,s)=>`<header class="ph"><div class="gl"></div><div class="w">${tg(t)}<h1 class="split">${h}</h1>${s?`<p class="sub rv">${s}</p>`:""}</div></header>`;
+const cards=(a,cl="g")=>`<div class="g ${cl}">${a.map((x,i)=>`<div class="c rv" data-hover><small>0${i+1}</small><h3>${x[0]}</h3><p>${x[1]}</p></div>`).join("")}</div>`;
+const rows=a=>a.map((x,i)=>`<div class="row rv" data-hover><b>0${i+1}</b><h3>${x[0]}</h3><p>${x[1]}</p></div>`).join("");
+const statsH=c=>`<section><div class="w stats rv">${c.stats.map(s=>`<div><b data-n="${s[0]}">0</b><p>${s[1]} ${s[2]}</p></div>`).join("")}</div></section>`;
+const ctaH=c=>`<section class="ctab"><div class="w"><h2 class="rv split">${c.cH}</h2><p class="lead rv" style="margin-inline:auto">${c.cS}</p><a class="btn rv" href="#/contact">${c.cta} ${IC.arr}</a></div></section>`;
+const trustH=c=>`<section class="trust"><div class="w">${tg(c.trustTag)}<div class="bg rv">${c.trust.map(b=>`<b data-hover>${IC.check} ${b}</b>`).join("")}</div></div></section>`;
+const reelsH=c=>`<section><div class="w">${tg(c.reelsTag)}<h2 class="rv split">${c.reelsH}</h2><div class="rl">${c.reels.map(r=>`<button class="rlc rv" data-reel data-hover><video src="${VIDEO}" muted loop autoplay playsinline></video><span class="pl"><i>${IC.play}</i></span><h3>${r}</h3></button>`).join("")}</div></div></section>`;
+const procH=c=>`<section><div class="w">${tg(c.pT)}<h2 class="rv split">${c.pH}</h2><div class="pr rv" id="pr"><div class="line"><i id="prf"></i></div>${c.pr.map((p,i)=>`<div class="step"><span class="knob"></span><small>STEP 0${i+1}</small><h3>${p[0]}</h3><p>${p[1]}</p></div>`).join("")}</div></div></section>`;
+const quotesH=c=>`<section class="qt"><div class="w">${tg(c.qT)}<div class="qbox" id="qbox"><div><p class="q">“${c.qs[0][0]}”</p><small>${c.qs[0][1]}</small></div></div><div class="dots">${c.qs.map((_,k)=>`<button aria-label="Quote ${k+1}" data-q="${k}" class="${k?"":"on"}"></button>`).join("")}</div></div></section>`;
+const postList=(c,k)=>c.posts.filter(p=>p.k==k).map(p=>`<a class="row rv" href="#/post/${p.id}" data-hover style="grid-template-columns:180px 1fr auto"><span style="color:var(--m);font-size:14px">${p.d}</span><div><h3 style="font-size:clamp(22px,3vw,36px)">${p.t}</h3><p style="margin-top:8px">${p.e}</p></div><span style="color:var(--m)">${IC.arr}</span></a>`).join("");
+const formH=c=>`<form onsubmit="event.preventDefault();this.innerHTML='<p class=sent>'+T[L].sent+'</p>'"><input required placeholder="${c.form[0]}"><input required type="email" placeholder="${c.form[1]}"><textarea required rows="5" placeholder="${c.form[2]}"></textarea><button class="btn">${c.form[3]} ${IC.arr}</button></form>`;
+const P={
+"":c=>`<header class="hero"><video src="${VIDEO}" autoplay muted loop playsinline id="hv"></video><div class="fade"></div><div class="cyber" style="position:absolute;inset:0;opacity:.4"></div><div class="gl" id="hgl"></div>
+<div class="w"><div>${tg(c.hubs)}<h1 class="split">${c.h1a}<br><em>${c.h1b}</em></h1><p class="sub rv">${c.sub}</p><div class="cta"><a class="btn" href="#/contact">${c.cta} ${IC.arr}</a><a class="ghost" href="#/work">${c.view}</a></div></div>
+<div class="sw glass rv"><button class="top" id="swb" data-hover>${MARK}<span class="tg" id="swt"><i></i></span></button><div>${c.status.map(s=>`<div class="st-r" data-st><span>${s[0]}</span><span><i class="dot"></i><b class="lbl">OFF</b></span></div>`).join("")}</div></div></div>
+<div class="scrl"><i></i></div></header>
+<div class="mq"><div>${"SOFTWARE <i>✦</i> AI MARKETING <i>✦</i> MOBILE APPS <i>✦</i> BRANDING <i>✦</i> DASHBOARDS <i>✦</i> ".repeat(2)}</div></div>
+${trustH(c)}
+<section id="services"><div class="w">${tg(c.sT)}<h2 class="rv split">${c.sH}</h2>${cards(c.sv)}</div></section>
+<div class="hz"><div class="st"><div class="w" style="margin-bottom:44px">${tg(c.wT)}<h2 class="rv">${c.wH}</h2></div><div class="tr" id="tr">${c.wk.map((w,i)=>`<a class="pj" href="#/work" data-hover><div class="gr cyber"></div><div class="mock"><u></u><s style="width:75%"></s><s style="width:60%"></s><div class="b"><i></i><i></i><i></i></div></div><div class="cap"><div><span>0${i+1} — ${w[1]}</span><h3>${w[0]}</h3></div><span class="go">${IC.arr}</span></div></a>`).join("")}</div></div></div>
+${statsH(c)}${reelsH(c)}${procH(c)}${quotesH(c)}
+<section id="contact"><div class="w" style="display:grid;gap:56px"><div style="max-width:640px"><h2 class="rv split">${c.cH}</h2><p class="lead rv">${c.cS}</p></div><div class="glass rv" style="border-radius:26px;padding:32px;max-width:640px">${formH(c)}</div></div></section>`,
+services:c=>ph(c.sT,c.sH,c.sub)+`<section style="padding-top:0"><div class="w">${rows(c.sv)}</div></section>${procH(c)}${ctaH(c)}`,
+work:c=>ph(c.wT,c.wH)+`<section style="padding-top:0"><div class="w g g2">${c.wk.map((w,i)=>`<div class="c rv" data-hover style="aspect-ratio:4/5;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden"><div class="cyber" style="position:absolute;inset:0;opacity:.6"></div><span style="color:var(--a);font-size:12px;font-weight:800;letter-spacing:.14em;position:relative">0${i+1} — ${w[1]}</span><h3 style="font-size:28px;position:relative;margin-top:6px">${w[0]}</h3></div>`).join("")}</div></section>${statsH(c)}${ctaH(c)}`,
+markets:c=>ph(c.mT,c.mH,c.sub)+`<section style="padding-top:0"><div class="w">${rows(c.mk)}</div></section>${ctaH(c)}`,
+partners:c=>ph(c.pTn,c.pHn,c.pS)+`<div class="pl-m"><div>${[...c.partners,...c.partners].map(p=>`<span>${p}</span>`).join("")}</div></div><section style="padding-top:0"><div class="w"><div class="pg rv">${c.partners.map(p=>`<div data-hover>${p}</div>`).join("")}</div></div></section>${ctaH(c)}`,
+about:c=>ph(c.aT,c.aH,c.aS)+statsH(c)+`<section style="padding-top:0"><div class="w">${cards(c.val,"g4")}</div></section>${procH(c)}${quotesH(c)}<section><div class="w">${tg(c.pTn)}<div class="pg rv">${c.partners.map(p=>`<div data-hover>${p}</div>`).join("")}</div></div></section>${ctaH(c)}`,
+news:c=>ph(c.nT,c.nH)+`<section style="padding-top:0"><div class="w">${postList(c,"news")}</div></section>`,
+articles:c=>ph(c.arT,c.arH)+`<section style="padding-top:0"><div class="w">${postList(c,"articles")}</div></section>`,
+contact:c=>ph(c.hubs,c.cH,c.cS)+`<section style="padding-top:0"><div class="w" style="display:grid;gap:40px;grid-template-columns:1fr"><div class="glass" style="border-radius:26px;padding:32px;max-width:640px">${formH(c)}</div><div class="ct" style="display:flex;flex-direction:column;gap:12px;color:var(--m);font-size:15px"><span>${IC.pin} Abu Dhabi, UAE • Cairo, Egypt</span><span dir="ltr">${IC.tel} +971 50 317 2004</span><a href="mailto:info@gooddeals.ae" style="display:flex;gap:9px;align-items:center">${IC.mail} info@gooddeals.ae</a></div></div></section>`,
+post:(c,id)=>{const p=c.posts.find(x=>x.id==id)||c.posts[0];const g=p.k=="news"?(L=="ar"?"الشركة":"Company"):(L=="ar"?"رؤى":"Insights");return ph(p.d+" · "+g,p.t,p.e)+`<section style="padding-top:0"><div class="w art">${p.b.map(b=>`<p class="rv">${b}</p>`).join("")}<a class="btn" href="#/${p.k}">${c.back}</a></div></section>`}
+};
+function words(h,delay){
+ const d=document.createElement("div");d.innerHTML=h.innerHTML;let i=0;
+ const wrap=n=>[...n.childNodes].forEach(k=>{
+  if(k.nodeType==3){const f=document.createDocumentFragment();
+   k.textContent.split(/(\s+)/).forEach(tk=>{
+    if(!tk)return;
+    if(/^\s+$/.test(tk)){f.appendChild(document.createTextNode(" "));return}
+    const s=document.createElement("span");s.className="wd";const it=document.createElement("i");it.textContent=tk;it.style.transitionDelay=(delay+i*0.08+(started?0:0.9))+"s";s.appendChild(it);f.appendChild(s);i++});
+   k.replaceWith(f)}else wrap(k)});
+ wrap(d);h.innerHTML=d.innerHTML;
+ requestAnimationFrame(()=>setTimeout(()=>h.querySelectorAll(".wd").forEach(e=>e.classList.add("in")),started?60:1500));
+}
+function counters(root){
+ root.querySelectorAll("[data-n]").forEach(b=>{
+  const n=+b.dataset.n;let t=0;const s=setInterval(()=>{t++;b.textContent=Math.round(n*t/45);if(t>=45)clearInterval(s)},28)});
+}
+function render(){
+ const c=T[L],[r,id]=location.hash.replace(/^#\/?/,"").split("/");
+ document.documentElement.lang=L;document.documentElement.dir=L=="ar"?"rtl":"ltr";
+ $("nlg").innerHTML=MARK+"<span>GOOD DEALS</span>";$("flg").innerHTML=MARK+"<span>GOOD DEALS</span>";
+ $("nl").innerHTML=c.nav.map(n=>`<li><a href="#/${n[0]}" class="${r==n[0]?"on":""}">${n[1]}</a></li>`).join("");
+ $("nl").classList.remove("op");$("mb").textContent="☰";$("hub").style.display="flex";
+ $("lb").textContent=c.lang;$("nc").textContent=c.cta;$("ftg").textContent=c.tagline;
+ $("fnl").innerHTML=c.nav.map(n=>`<li><a href="#/${n[0]}">${n[1]}</a></li>`).join("");
+ $("fct").innerHTML=`<span>${IC.pin} Abu Dhabi, UAE • Cairo, Egypt</span><span dir="ltr">${IC.tel} +971 50 317 2004</span><a href="mailto:info@gooddeals.ae" style="display:flex;gap:9px;align-items:center">${IC.mail} info@gooddeals.ae</a>`;
+ $("fsoc").innerHTML=["LinkedIn","Instagram","X","Behance"].map(s=>`<a href="#">${s}</a>`).join("");
+ $("fcp").textContent=`© 2026 Good Deals. ${c.rights}`;
+ $("app").innerHTML=(P[r]||P[""])(c,id);
+ document.title=(r&&r!=""?((r=="post"?(c.posts.find(x=>x.id==id)||{}).t||"Article":(c.nav.find(n=>n[0]==r)||["","Good Deals"])[1])+" — Good Deals"):"Good Deals — Your business, switched on.");
+ scrollTo(0,0);
+ if(io)io.disconnect();
+ io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add("in");if(e.target.matches("[data-n]")||e.target.querySelector("[data-n]"))counters(e.target);io.unobserve(e.target)}),{threshold:.15});
+ document.querySelectorAll(".rv").forEach(e=>io.observe(e));
+ document.querySelectorAll(".split").forEach(h=>words(h,0));
+ // hero switch
+ const swt=$("swt"),swb=$("swb");
+ if(swt){let on=false;const apply=()=>{swt.classList.toggle("on",on);$("hgl").classList.toggle("on",on);document.querySelectorAll("[data-st]").forEach((row,i)=>{row.classList.toggle("on",on);row.querySelector(".lbl").textContent=on?c.status[i][1]:"OFF"})};swb.onclick=()=>{on=!on;apply()};setTimeout(()=>{on=true;apply()},1600);}
+ // quotes
+ clearInterval(qTimer);
+ const qb=$("qbox");
+ if(qb){let k=0;const go=n=>{k=n;qb.classList.add("out");setTimeout(()=>{qb.innerHTML=`<div><p class="q">“${c.qs[k][0]}”</p><small>${c.qs[k][1]}</small></div>`;qb.classList.remove("out")},450);document.querySelectorAll("[data-q]").forEach((b,i)=>b.classList.toggle("on",i==k))};
+  document.querySelectorAll("[data-q]").forEach(b=>b.onclick=()=>go(+b.dataset.q));
+  qTimer=setInterval(()=>go((k+1)%c.qs.length),5000);}
+ // reels modal
+ document.querySelectorAll("[data-reel]").forEach(b=>b.onclick=()=>{$("mdv").src=VIDEO;$("md").classList.add("op")});
+ // hub panel
+ $("hpn").innerHTML=`<p>${c.hubsTitle}</p>`+c.hubs.map(h=>`<a href="https://wa.me/${h[2]}" target="_blank" rel="noreferrer"><span>${h[0]}</span><s>${h[1]}</s></a>`).join("");
+}
+$("lb").onclick=()=>{L=L=="en"?"ar":"en";localStorage.setItem("gd-lang",L);render()};
+$("mb").onclick=()=>{const o=$("nl").classList.toggle("op");$("mb").textContent=o?"✕":"☰";$("hub").style.display=o?"none":"flex"};
+$("mdx").onclick=$("md").onclick=()=>{$("md").classList.remove("op");$("mdv").pause();$("mdv").src=""};
+$("hbb").onclick=()=>{$("hpn").classList.toggle("op");$("hbb").textContent=$("hpn").classList.contains("op")?"✕":"💬"};
+addEventListener("hashchange",render);
+addEventListener("scroll",()=>{
+ $("nv").classList.toggle("st",scrollY>40);
+ const hz=document.querySelector(".hz"),tr=$("tr");
+ if(hz&&tr){const p=Math.min(1,Math.max(0,-hz.getBoundingClientRect().top/(hz.offsetHeight-innerHeight)));
+  tr.style.transform=`translateX(${-p*(tr.scrollWidth-innerWidth+48)}px)`}
+ const hv=$("hv");if(hv){const p=Math.min(1,scrollY/innerHeight);hv.style.transform=`translateY(${p*120}px) scale(${1+p*0.18})`}
+ const pr=$("pr"),prf=$("prf");
+ if(pr&&prf){const r=pr.getBoundingClientRect();const p=Math.min(1,Math.max(0,(innerHeight*0.75-r.top)/(r.height*0.85)));prf.style.height=(p*100)+"%"}
+},{passive:true});
+addEventListener("mousemove",e=>{const cu=$("cur");cu.style.left=e.clientX+"px";cu.style.top=e.clientY+"px";const big=!!(e.target.closest&&e.target.closest("a,button,[data-hover]"));cu.style.width=big?"52px":"12px";cu.style.height=big?"52px":"12px"});
+$("ldl").innerHTML=MARK+"<span style='font-size:22px'>GOOD DEALS</span>";
+render();
+requestAnimationFrame(()=>$("ldb").style.width="100%");
+setTimeout(()=>{$("ld").classList.add("go");started=true},1700);
+import("https://esm.sh/lenis@1.1.18").then(({default:Lenis})=>{const l=new Lenis({lerp:0.09});const loop=t=>{l.raf(t);requestAnimationFrame(loop)};requestAnimationFrame(loop)}).catch(()=>{});
+</script></body></html>
